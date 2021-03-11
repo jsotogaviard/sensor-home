@@ -13,9 +13,9 @@ noble.on('stateChange', function (state) {
   });
   
   noble.on('discover', function (peripheral) {
-    serviceData = peripheral.advertisement.serviceData
-    manufacturer_service_data_hex = serviceData[0].data.toString('hex') //a4c138ab590500a53f550b9b72" //mac a4c138ab5905
-    thermometer = {}
+    const serviceData = peripheral.advertisement.serviceData
+    const manufacturer_service_data_hex = serviceData[0].data.toString('hex') //a4c138ab590500a53f550b9b72" //mac a4c138ab5905
+    const thermometer = {}
     thermometer.id = peripheral.id // id == mac
     thermometer.uuid = serviceData[0].uuid //"181a"
     thermometer.mac =  manufacturer_service_data_hex.substring(0,12)
