@@ -2,6 +2,9 @@ import noble from '@abandonware/noble'
 
 console.log("hello world")
 
+const services = await peripheral.discoverServicesAsync();
+console.log(services)
+
 noble.on('stateChange', function (state) {
     if (state === 'poweredOn') {
         console.log("poweredOn")
