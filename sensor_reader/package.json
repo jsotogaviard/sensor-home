@@ -1,0 +1,11 @@
+{
+  "name": "sensor_reader",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {},
+  "dependencies": {
+    "noble": "^1.9.1"
+  },
+  "devDependencies": {}
+}
