@@ -1,0 +1,16 @@
+version: '3'
+services:
+  influxdb:
+    image: influxdb:2.0.4
+    volumes:
+      # Mount for influxdb data directory and configuration
+      - influxdbv2:/.influxdbv2
+      - ./influx/init.db/:/docker-entrypoint-initdb.d/
+    ports:
+      - "8086:8086"
+    env_file:
+      - ./influx/influxdb.env
+  node-cron:
+    build: ./sensor_reader/
+volumes:
+  influxdbv2:
