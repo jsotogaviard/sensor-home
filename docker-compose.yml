@@ -1,4 +1,4 @@
-version: '3.4'
+version: '3'
 services:
   # influxdb_2.0:
   #   image: influxdb:2.0.4
@@ -44,7 +44,7 @@ services:
       - INFLUXDB_PASSWORD=admin123
   node-cron:
     build: ./sensor_reader/
-    network: host
+    network_mode: host
 volumes:
   influxdbv2:
   influxdbv1:
