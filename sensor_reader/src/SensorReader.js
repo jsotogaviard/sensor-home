@@ -26,5 +26,5 @@ export function getKnownSensors(sensors) {
       knownSensors.push(knownSensor)
     }
   });
-  return peripheral.advertisement && peripheral.advertisement.serviceData && peripheral.advertisement.serviceData.length > 0 && peripheral.advertisement.serviceData[0].uuid == "181a";
+  return knownSensors;
 }
