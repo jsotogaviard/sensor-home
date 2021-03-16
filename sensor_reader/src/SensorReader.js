@@ -19,7 +19,6 @@ export function isKnownSensor(peripheral) {
 
 export function getKnownSensors(sensors) {
   const knownSensors = []
-  console.log(sensors instanceof Map)
   Object.values(sensors).forEach(sensor => {
     if(isKnownSensor(sensor)){
       const knownSensor = parseAdvData(sensor)
