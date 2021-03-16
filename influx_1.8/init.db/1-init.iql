@@ -1,2 +1,1 @@
-CREATE DATABASE weather;
-INSERT weather value="stringing along" 1466625759000000000
+insert into jso.autogen passengers_in_car1,train=a,car=one,driver=gupta count=125

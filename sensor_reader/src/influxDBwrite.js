@@ -34,7 +34,7 @@ export function writeSensorData(knownSensors) {
 export function readSensorData(){
     const queryApi = new InfluxDB({url, token}).getQueryApi(org)
     const fluxQuery =
-      'from(bucket:"bucket") |> range(start: 0) |> filter(fn: (r) => r._measurement == "temperature")'
+      'from(bucket:"jso") |> range(start: 0) |> filter(fn: (r) => r._measurement == "temperature")'
     
     console.log('*** QUERY ROWS ***')
     // Execute query and receive table metadata and rows.

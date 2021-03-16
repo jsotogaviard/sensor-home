@@ -17,7 +17,7 @@ describe("Write sensor data", () => {
         writeSensorData([knownSensor])
         const queryApi = new InfluxDB({ url, token }).getQueryApi(org)
         const fluxQuery =
-            'from(bucket:"bucket") |> range(start: 0) |> filter(fn: (r) => r["_field"] == "temperature")'
+            'from(bucket:"jso") |> range(start: 0) |> filter(fn: (r) => r["_field"] == "temperature")'
 
         console.log('*** QUERY ROWS ***')
         // Execute query and receive table metadata and rows.

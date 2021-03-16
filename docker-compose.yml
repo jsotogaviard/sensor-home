@@ -13,7 +13,6 @@ services:
   influxdb_1.8:
     image: influxdb:1.8.4
     volumes:
-      # Mount for influxdb data directory and configuration
       - influxdbv1:/.influxdbv1
       - ./influx_1.8/init.db/:/docker-entrypoint-initdb.d/
     ports:
@@ -31,9 +30,6 @@ services:
       - influxdb_1.8
     env_file:
       - ./grafana/grafana.env
-    environment:
-      - GF_SECURITY_ADMIN_USER=admin
-      - GF_SECURITY_ADMIN_PASSWORD=admin123
   chronograf:
     image: chronograf:latest
     ports:
