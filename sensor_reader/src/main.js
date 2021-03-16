@@ -1,6 +1,6 @@
 import noble from '@abandonware/noble'
-import './SensorReader'
-import './influxDBwrite'
+import {getKnownSensors} from './SensorReader'
+import {writeSensorData} from './influxDBwrite'
 
 const sensors = {}
 
