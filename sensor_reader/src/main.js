@@ -15,7 +15,7 @@ noble.on('stateChange', state => {
 });
 
 noble.on('discover', peripheral => {
-  if(!sensors.has(peripheral.id)){
+  if(!sensors[peripheral.id]){
     sensors[peripheral.id] = peripheral  
   }
 });
