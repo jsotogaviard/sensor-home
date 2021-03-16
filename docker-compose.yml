@@ -45,6 +45,7 @@ services:
   node-cron:
     build: ./sensor_reader/
     network_mode: host
+    privileged: true
 volumes:
   influxdbv2:
   influxdbv1:
