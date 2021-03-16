@@ -1,0 +1,2 @@
+CREATE DATABASE weather;
+INSERT weather value="stringing along" 1466625759000000000

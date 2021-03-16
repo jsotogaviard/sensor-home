@@ -1,16 +1,55 @@
 version: '3'
 services:
-  influxdb:
-    image: influxdb:2.0.4
+  # influxdb_2.0:
+  #   image: influxdb:2.0.4
+  #   volumes:
+  #     # Mount for influxdb data directory and configuration
+  #     - influxdbv2:/.influxdbv2
+  #     - ./influx_2.0/init.db/:/docker-entrypoint-initdb.d/
+  #   ports:
+  #     - "8086:8086"
+  #   env_file:
+  #     - ./influx/influxdb.env
+  influxdb_1.8:
+    image: influxdb:1.8.4
     volumes:
       # Mount for influxdb data directory and configuration
-      - influxdbv2:/.influxdbv2
-      - ./influx/init.db/:/docker-entrypoint-initdb.d/
+      - influxdbv1:/.influxdbv1
+      - ./influx_1.8/init.db/:/docker-entrypoint-initdb.d/
     ports:
       - "8086:8086"
     env_file:
-      - ./influx/influxdb.env
+      - ./influx_1.8/influxdb.env
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - '3000:3000'
+    volumes:
+      - grafana-storage:/var/lib/grafana
+      - ./grafana/:/etc/grafana/provisioning
+    depends_on:
+      - influxdb_1.8
+    env_file:
+      - ./grafana/grafana.env
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin123
+  chronograf:
+    image: chronograf:latest
+    ports:
+      - '127.0.0.1:8888:8888'
+    volumes:
+      - chronograf-storage:/var/lib/chronograf
+    depends_on:
+      - influxdb_1.8
+    environment:
+      - INFLUXDB_URL=http://influxdb_1.8:8086
+      - INFLUXDB_USERNAME=admin
+      - INFLUXDB_PASSWORD=admin123
   node-cron:
     build: ./sensor_reader/
 volumes:
   influxdbv2:
+  influxdbv1:
+  grafana-storage:
+  chronograf-storage:
