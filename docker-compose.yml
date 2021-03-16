@@ -44,6 +44,7 @@ services:
       - INFLUXDB_PASSWORD=admin123
   node-cron:
     build: ./sensor_reader/
+    network: host
 volumes:
   influxdbv2:
   influxdbv1:
