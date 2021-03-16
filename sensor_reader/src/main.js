@@ -26,4 +26,4 @@ setTimeout(() => {
   const knownSensors = getKnownSensors(sensors)
   writeSensorData(knownSensors)
   
-}, 10000);
+}, 2000);
