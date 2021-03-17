@@ -604,7 +604,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.temperature {room: a4c138a8554e}"
+              "options": "sensor_data.battery_percentage {room: a4c138a8554e}"
             },
             "properties": [
               {
@@ -640,7 +640,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.temperature {room: a4c138cc430d}"
+              "options": "sensor_data.battery_percentage {room: a4c138cc430d}"
             },
             "properties": [
               {
@@ -652,7 +652,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.temperature {room: a4c138d8df4f}"
+              "options": "sensor_data.battery_percentage {room: a4c138d8df4f}"
             },
             "properties": [
               {
@@ -876,7 +876,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.temperature {room: a4c138cc430d}"
+              "options": "sensor_data.battery_millivolts {room: a4c138cc430d}"
             },
             "properties": [
               {
@@ -888,7 +888,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.temperature {room: a4c138d8df4f}"
+              "options": "sensor_data.battery_millivolts {room: a4c138d8df4f}"
             },
             "properties": [
               {
