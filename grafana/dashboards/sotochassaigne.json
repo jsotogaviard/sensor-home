@@ -15,156 +15,183 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 1,
   "links": [],
   "panels": [
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 0
-      },
-      "hiddenSeries": false,
-      "id": 4,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "7.4.3",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT mean(\"value\") FROM \"measurement\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Panel Title",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
     {
       "datasource": null,
       "fieldConfig": {
         "defaults": {
           "color": {
+            "fixedColor": "yellow",
             "mode": "thresholds"
           },
           "custom": {},
           "mappings": [],
+          "max": 50,
+          "min": -10,
           "thresholds": {
             "mode": "absolute",
-            "steps": []
-          }
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "dark-purple",
+                "value": -10
+              },
+              {
+                "color": "dark-blue",
+                "value": 0
+              },
+              {
+                "color": "super-light-blue",
+                "value": 10
+              },
+              {
+                "color": "super-light-orange",
+                "value": 15
+              },
+              {
+                "color": "dark-orange",
+                "value": 20
+              },
+              {
+                "color": "dark-red",
+                "value": 40
+              }
+            ]
+          },
+          "unit": "celsius"
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c1380c272d}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c1380c272d"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c13843ff74}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c13843ff74"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c13845ae7b}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c13845ae7b"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138785581}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138785581"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c1389cd8bd}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c1389cd8bd"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138a8554e}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138a8554e"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138ab5905}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138ab5905"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138c70dad}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138c70dad"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138cc430d}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138cc430d"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138d8df4f}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138d8df4f"
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 8
+        "y": 0
       },
       "id": 2,
       "options": {
@@ -220,11 +247,968 @@
             ]
           ],
           "tags": []
+        },
+        {
+          "datasource": "__expr__",
+          "hide": false,
+          "refId": "B",
+          "type": "math"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
       "title": "Temperature",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "yellow",
+            "mode": "palette-classic"
+          },
+          "custom": {},
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "dark-purple",
+                "value": -10
+              },
+              {
+                "color": "dark-blue",
+                "value": 0
+              },
+              {
+                "color": "super-light-blue",
+                "value": 10
+              },
+              {
+                "color": "super-light-orange",
+                "value": 15
+              },
+              {
+                "color": "dark-orange",
+                "value": 20
+              },
+              {
+                "color": "dark-red",
+                "value": 40
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c1380c272d}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c1380c272d"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c13843ff74}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c13843ff74"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c13845ae7b}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c13845ae7b"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138785581}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138785581"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c1389cd8bd}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c1389cd8bd"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138a8554e}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138a8554e"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138ab5905}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138ab5905"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138c70dad}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138c70dad"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138cc430d}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138cc430d"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138d8df4f}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138d8df4f"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 9
+      },
+      "id": 3,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.4.3",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(\"humidity\") AS \"humidity\" FROM \"sotochassaigne\".\"autogen\".\"sensor_data\"GROUP BY time(1m), \"room\" ",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Humidity",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "yellow",
+            "mode": "palette-classic"
+          },
+          "custom": {},
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "dark-purple",
+                "value": -10
+              },
+              {
+                "color": "dark-blue",
+                "value": 0
+              },
+              {
+                "color": "super-light-blue",
+                "value": 10
+              },
+              {
+                "color": "super-light-orange",
+                "value": 15
+              },
+              {
+                "color": "dark-orange",
+                "value": 20
+              },
+              {
+                "color": "dark-red",
+                "value": 40
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+       "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c1380c272d}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c1380c272d"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c13843ff74}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c13843ff74"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c13845ae7b}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c13845ae7b"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138785581}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138785581"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c1389cd8bd}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c1389cd8bd"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138a8554e}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138a8554e"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138ab5905}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138ab5905"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138c70dad}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138c70dad"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138cc430d}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138cc430d"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138d8df4f}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138d8df4f"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 18
+      },
+      "id": 4,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.4.3",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(\"battery_percentage\") AS \"battery_percentage\" FROM \"sotochassaigne\".\"autogen\".\"sensor_data\"GROUP BY time(1m), \"room\" ",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Battery Percentage",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "yellow",
+            "mode": "palette-classic"
+          },
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "dark-purple",
+                "value": -10
+              },
+              {
+                "color": "dark-blue",
+                "value": 0
+              },
+              {
+                "color": "super-light-blue",
+                "value": 10
+              },
+              {
+                "color": "super-light-orange",
+                "value": 15
+              },
+              {
+                "color": "dark-orange",
+                "value": 20
+              },
+              {
+                "color": "dark-red",
+                "value": 40
+              }
+            ]
+          },
+          "unit": "mvolt"
+        },
+       "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c1380c272d}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c1380c272d"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c13843ff74}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c13843ff74"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c13845ae7b}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c13845ae7b"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138785581}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138785581"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c1389cd8bd}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c1389cd8bd"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138a8554e}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138a8554e"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138ab5905}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138ab5905"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138c70dad}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138c70dad"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138cc430d}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138cc430d"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138d8df4f}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138d8df4f"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 27
+      },
+      "id": 5,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.4.3",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(\"battery_millivolts\") AS \"battery_millivolts\" FROM \"sotochassaigne\".\"autogen\".\"sensor_data\"GROUP BY time(1m), \"room\" ",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Battery Millivolts",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "yellow",
+            "mode": "palette-classic"
+          },
+          "custom": {},
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "dark-purple",
+                "value": -10
+              },
+              {
+                "color": "dark-blue",
+                "value": 0
+              },
+              {
+                "color": "super-light-blue",
+                "value": 10
+              },
+              {
+                "color": "super-light-orange",
+                "value": 15
+              },
+              {
+                "color": "dark-orange",
+                "value": 20
+              },
+              {
+                "color": "dark-red",
+                "value": 40
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c1380c272d}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c1380c272d"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c13843ff74}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c13843ff74"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c13845ae7b}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c13845ae7b"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138785581}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138785581"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c1389cd8bd}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c1389cd8bd"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138a8554e}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138a8554e"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138ab5905}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138ab5905"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138c70dad}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138c70dad"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138cc430d}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138cc430d"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "sensor_data.temperature {room: a4c138d8df4f}"
+            },
+            "properties": [
+              {
+                "id": "displayName",
+                "value": "a4c138d8df4f"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 36
+      },
+      "id": 6,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "7.4.3",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(\"counter\") AS \"counter\" FROM \"sotochassaigne\".\"autogen\".\"sensor_data\"GROUP BY time(1m), \"room\" ",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Counter",
+      "transformations": [],
       "type": "stat"
     }
   ],
@@ -240,7 +1224,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "New dashboard Copy",
+  "title": "soto chassaigne",
   "uid": "SJ-q1iwMz",
-  "version": 3
+  "version": 2
 }
