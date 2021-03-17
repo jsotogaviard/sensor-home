@@ -247,12 +247,6 @@
             ]
           ],
           "tags": []
-        },
-        {
-          "datasource": "__expr__",
-          "hide": false,
-          "refId": "B",
-          "type": "math"
         }
       ],
       "timeFrom": null,
