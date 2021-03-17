@@ -1,4 +1,10 @@
-export function parseAdvData(peripheral) {
+
+/**
+ * Parse telemetry data from peripheral
+ * @param {*} peripheral 
+ * @returns 
+ */
+function parseAdvData(peripheral) {
   const serviceData = peripheral.advertisement.serviceData
   const manufacturer_service_data_hex = Buffer.from(serviceData[0].data).toString("hex")
   const thermometer = {}
@@ -13,11 +19,21 @@ export function parseAdvData(peripheral) {
   return thermometer;
 }
 
-export function isKnownSensor(peripheral) {
+/**
+ * Use only known sensors
+ * @param {*} peripheral 
+ * @returns 
+ */
+function isKnownSensor(peripheral) {
   return peripheral.advertisement && peripheral.advertisement.serviceData && peripheral.advertisement.serviceData.length > 0 && peripheral.advertisement.serviceData[0].uuid == "181a";
 }
 
-export function getKnownSensors(sensors) {
+/**
+ * Retrieve and parse only known sensors
+ * @param {*} sensors 
+ * @returns 
+ */
+function getKnownSensors(sensors) {
   const knownSensors = []
   Object.values(sensors).forEach(sensor => {
     if(isKnownSensor(sensor)){
@@ -27,3 +43,5 @@ export function getKnownSensors(sensors) {
   });
   return knownSensors;
 }
+
+export {getKnownSensors}

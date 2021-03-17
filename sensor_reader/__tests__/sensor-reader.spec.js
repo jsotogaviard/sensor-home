@@ -1,16 +1,15 @@
-import { isKnownSensor, parseAdvData } from "../src/SensorReader";
+import { getKnownSensors } from "../src/sensor-reader";
 
 function hexStringToByte(str) {
     if (!str) {
         return new Uint8Array();
+    } else {
+        var a = [];
+        for (var i = 0, len = str.length; i < len; i += 2) {
+            a.push(parseInt(str.substr(i, 2), 16));
+        }
+        return new Uint8Array(a);
     }
-
-    var a = [];
-    for (var i = 0, len = str.length; i < len; i += 2) {
-        a.push(parseInt(str.substr(i, 2), 16));
-    }
-
-    return new Uint8Array(a);
 }
 
 describe("A sensor reader module", () => {
@@ -26,7 +25,7 @@ describe("A sensor reader module", () => {
                 ]
             }
         }
-        expect(isKnownSensor(peripheral)).toEqual(false);
+        expect(getKnownSensors(peripheral).length).toEqual(0);
     });
     test("A known sensor ", () => {
         const peripheral = {
@@ -40,9 +39,9 @@ describe("A sensor reader module", () => {
                 ]
             }
         }
-        expect(isKnownSensor(peripheral)).toEqual(true);
+        expect(getKnownSensors(peripheral).length).toEqual(1);
     });
-    test("Transform into known sensor ", () => {
+    test("Transform into known sensor", () => {
         const peripheral = {
             id: 'a4c138ab5905',
             advertisement: {
@@ -54,7 +53,9 @@ describe("A sensor reader module", () => {
                 ]
             }
         }
-        const knownSensor = parseAdvData(peripheral)
+        const knownSensors = getKnownSensors(peripheral)
+        expect(knownSensors.length).toEqual(1);
+        const knownSensor = knownSensors[0]
         expect(knownSensor.id).toEqual("a4c138ab5905");
         expect(knownSensor.uuid).toEqual("181a");
         expect(knownSensor.mac).toEqual("a4c138ab5905");

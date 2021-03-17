@@ -1,16 +1,16 @@
 /** InfluxDB v2 URL */
-const url = process.env['INFLUX_URL'] || 'http://localhost:8086'
+const url = 'http://localhost:8086'
 /** InfluxDB authorization token */
-const token = process.env['INFLUX_TOKEN'] || 'token'
+const token = 'token'
 /** Organization within InfluxDB  */
-const org = process.env['INFLUX_ORG'] || 'org'
+const org = 'org'
 /**InfluxDB bucket used in examples  */
-const bucket = 'jso'
+const bucket = 'sotochassaigne'
 // ONLY onboarding example
 /**InfluxDB user  */
-const username = 'admin'
+const username = 'soto'
 /**InfluxDB password  */
-const password = 'admin123'
+const password = 'chassaigne'
 
 export {
   url,

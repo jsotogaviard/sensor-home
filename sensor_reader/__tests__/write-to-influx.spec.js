@@ -1,9 +1,13 @@
-import { writeSensorData, readSensorData } from "../src/influxDBwrite"
+import { write2influx } from "../src/write-to-influx"
 import { url, token, org, bucket } from '../config'
-import { InfluxDB, Point, HttpError } from '@influxdata/influxdb-client'
+import { InfluxDB } from '@influxdata/influxdb-client'
 
-describe("Write sensor data", () => {
-    test("write sensor data ", done => {
+/**
+ * This tests a influx database on localhost 8086
+ * 
+ */
+describe("Write sensor data to influx", () => {
+    test("write sensor data to influx ", done => {
         const knownSensor = {}
         knownSensor.id = "a4c138ab5905"
         knownSensor.uuid = "181a"
@@ -14,14 +18,11 @@ describe("Write sensor data", () => {
         knownSensor.battery_millivolts = 2975
         knownSensor.counter = 99
 
-        writeSensorData([knownSensor])
+        write2influx([knownSensor])
         const queryApi = new InfluxDB({ url, token }).getQueryApi(org)
-        const fluxQuery =
-            'from(bucket:"jso") |> range(start: 0) |> filter(fn: (r) => r["_field"] == "temperature")'
+        const fluxQuery ='from(bucket:"'+ bucket + '") |> range(start: 0) |> filter(fn: (r) => r["_field"] == "temperature")'
 
         console.log('*** QUERY ROWS ***')
-        // Execute query and receive table metadata and rows.
-        // https://v2.docs.influxdata.com/v2.0/reference/syntax/annotated-csv/
         queryApi.queryRaw(fluxQuery)
             .then(result => {
                 console.log(result)
