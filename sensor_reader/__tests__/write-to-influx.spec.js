@@ -19,10 +19,10 @@ describe("Write sensor data to influx", () => {
         knownSensor.counter = 99
 
         write2influx([knownSensor])
-        const queryApi = new InfluxDB({ url, token }).getQueryApi(org)
-        const fluxQuery ='from(bucket:"'+ bucket + '") |> range(start: 0) |> filter(fn: (r) => r["_field"] == "temperature")'
 
-        console.log('*** QUERY ROWS ***')
+        // TODO how to query with old iql
+        const queryApi = new InfluxDB({ url, token }).getQueryApi(org)
+        const fluxQuery ='select * on ' + bucket
         queryApi.queryRaw(fluxQuery)
             .then(result => {
                 console.log(result)
@@ -31,7 +31,7 @@ describe("Write sensor data to influx", () => {
             })
             .catch(error => {
                 console.error(error)
-                console.log('\nQueryRaw ERROR')
+                fail('it should not reach here');
                 done()
             })
     })

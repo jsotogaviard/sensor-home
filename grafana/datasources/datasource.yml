@@ -6,6 +6,6 @@ datasources:
     database: sotochassaigne
     user: soto
     password: chassaigne
-    url: http://influxdb_1.8:8086
+    url: http://influx_1.8:8086
     isDefault: true
     editable: true

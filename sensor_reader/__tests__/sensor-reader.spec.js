@@ -25,7 +25,8 @@ describe("A sensor reader module", () => {
                 ]
             }
         }
-        expect(getKnownSensors(peripheral).length).toEqual(0);
+        const knownSensors = getKnownSensors({'a4c138ab5905':peripheral})
+        expect(knownSensors.length).toEqual(0);
     });
     test("A known sensor ", () => {
         const peripheral = {
@@ -39,7 +40,8 @@ describe("A sensor reader module", () => {
                 ]
             }
         }
-        expect(getKnownSensors(peripheral).length).toEqual(1);
+        const knownSensors = getKnownSensors({'a4c138ab5905':peripheral})
+        expect(knownSensors.length).toEqual(1);
     });
     test("Transform into known sensor", () => {
         const peripheral = {
@@ -53,7 +55,7 @@ describe("A sensor reader module", () => {
                 ]
             }
         }
-        const knownSensors = getKnownSensors(peripheral)
+        const knownSensors = getKnownSensors({'a4c138ab5905':peripheral})
         expect(knownSensors.length).toEqual(1);
         const knownSensor = knownSensors[0]
         expect(knownSensor.id).toEqual("a4c138ab5905");

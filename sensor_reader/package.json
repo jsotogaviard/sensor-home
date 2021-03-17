@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "watch": "node --nolazy --inspect-brk=5858 --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
-    "main": "node --es-module-specifier-resolution=node src/main.js $npm_config_scanning_time_ms"
+    "main": "node --es-module-specifier-resolution=node src/main.js"
   },
   "jest": {
     "collectCoverage": true,
