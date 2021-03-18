@@ -44,6 +44,16 @@ services:
     build: ./sensor_reader/
     network_mode: host
     privileged: true
+  telegraf:
+    image: telegraf:latest
+    depends_on:
+      - influx_1.8
+    volumes:
+      - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+      - /:/hostfs:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    env_file:
+      - ./telegraf/telegraf.env
 volumes:
   influxdb-2-storage:
   influxdb-1-storage:
