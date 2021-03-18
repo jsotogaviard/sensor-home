@@ -20,7 +20,7 @@ services:
     env_file:
       - ./influx_1.8/influxdb.env
   grafana:
-    image: grafana/grafana:latest
+    image: grafana/grafana:7.4.3
     ports:
       - '3000:3000'
     volumes:
@@ -31,7 +31,7 @@ services:
     env_file:
       - ./grafana/grafana.env
   chronograf:
-    image: chronograf:latest
+    image: chronograf:1.8.8
     ports:
       - '8888:8888'
     volumes:
@@ -45,7 +45,7 @@ services:
     network_mode: host
     privileged: true
   telegraf:
-    image: telegraf:latest
+    image: telegraf:1.18.0
     depends_on:
       - influx_1.8
     volumes:
