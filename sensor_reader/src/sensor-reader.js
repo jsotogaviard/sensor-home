@@ -16,7 +16,7 @@ function parseAdvData(peripheral) {
   thermometer.battery_percentage = parseInt(manufacturer_service_data_hex.substring(12 + 4 + 2, 12 + 4 + 2 + 2), 16)
   thermometer.battery_millivolts = parseInt(manufacturer_service_data_hex.substring(12 + 4 + 2 + 2, 12 + 4 + 2 + 2 + 4), 16)
   thermometer.counter = parseInt(manufacturer_service_data_hex.substring(12 + 4 + 2 + 2 + 4, 12 + 4 + 2 + 2 + 4 + 2), 16)
-  thermometer.counter = peripheral.rssi
+  thermometer.rssi = peripheral.rssi
   return thermometer;
 }
 
