@@ -18,6 +18,7 @@ function write2influx(knownSensors) {
       .intField('battery_percentage', knownSensor.battery_percentage)
       .intField('battery_millivolts', knownSensor.battery_millivolts)
       .intField('counter', knownSensor.counter)
+      .floatField('rssi', knownSensor.rssi)
       .timestamp(now)
     writeApi.writePoint(point)
     console.log(`${point.toLineProtocol(writeApi)}`)
