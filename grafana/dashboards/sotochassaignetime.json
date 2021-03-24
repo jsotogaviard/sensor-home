@@ -1536,7 +1536,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "5s",
+  "refresh": "5m",
   "schemaVersion": 27,
   "style": "dark",
   "tags": [],
@@ -1551,5 +1551,5 @@
   "timezone": "",
   "title": "soto chassaigne time",
   "uid": "YJpk77zRk",
-  "version": 1
+  "version": 2
 }

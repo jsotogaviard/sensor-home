@@ -1442,6 +1442,7 @@
       "type": "stat"
     }
   ],
+  "refresh": "1m",
   "schemaVersion": 27,
   "style": "dark",
   "tags": [],
@@ -1456,5 +1457,5 @@
   "timezone": "",
   "title": "soto chassaigne",
   "uid": "SJ-q1iwMz",
-  "version": 1
+  "version": 2
 }
