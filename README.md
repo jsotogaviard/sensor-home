@@ -29,6 +29,8 @@ ssh jsoto@92.89.86.97 -p 8000
 We need to install 
 ```
 sudo crontab -e
+
 */15 * * * * pkill node >> /var/log/syslog 2>&1
+
 * * */5 * * service docker restart >> /var/log/syslog 2>&1
 ```
