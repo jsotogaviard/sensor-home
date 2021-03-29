@@ -24,5 +24,3 @@ npm --prefix ./sensor_reader run watch
 
 ssh jsoto@192.168.1.24
 ssh jsoto@92.89.86.97 -p 8000
-docker context create rp4 --docker host=ssh://jsoto@192.168.1.24
-docker-compose ‐‐context rp4 down -v --remove-orphans  && docker-compose ‐‐context rp4 up -d --build && docker-compose ‐‐context rp4 logs -f

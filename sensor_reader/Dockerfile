@@ -7,7 +7,7 @@ RUN apt-get update && apt-get -y install cron nano less vim bluetooth bluez libb
 RUN setcap cap_net_raw+eip $(eval readlink -f `which node`)
 
 # Cron to retrieve sensor data and push it to influx
-RUN (crontab -l ; echo "* * * * * PATH="$PATH:/usr/local/bin" /usr/local/bin/npm --prefix /usr/src/app run main >> /var/log/cron.log 2>&1") | crontab
+RUN (crontab -l ; echo "0 * * * * PATH="$PATH:/usr/local/bin" /usr/local/bin/npm --prefix /usr/src/app run main >> /var/log/cron.log 2>&1") | crontab
  
 # Create the log file to be able to run tail
 RUN touch /var/log/cron.log

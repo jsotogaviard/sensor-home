@@ -1544,7 +1544,7 @@
     "list": []
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-7d",
     "to": "now"
   },
   "timepicker": {},
