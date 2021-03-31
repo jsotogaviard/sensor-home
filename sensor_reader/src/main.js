@@ -31,6 +31,4 @@ setTimeout(() => {
   const knownSensors = getKnownSensors(sensors)
   write2influx(knownSensors)
 
-  process.exit(1)
-
 }, process.env.SCANNING_TIME_MS || 5000); // TODO add env variable for scanning time
