@@ -1,6 +1,10 @@
 import { InfluxDB, Point } from '@influxdata/influxdb-client'
 import { url, token, org, bucket } from '../config'
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 /**
  * Write to influx
  * 
@@ -26,6 +30,7 @@ function write2influx(knownSensors) {
   writeApi.close().then(() => {
     console.log('WRITE FINISHED')
   })
+  await sleep(10000);
 
 }
 
