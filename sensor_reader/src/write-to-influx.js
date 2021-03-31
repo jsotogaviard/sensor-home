@@ -23,7 +23,9 @@ function write2influx(knownSensors) {
     writeApi.writePoint(point)
     console.log(`${point.toLineProtocol(writeApi)}`)
   }
-  writeApi.close()
+  writeApi.close().then(() => {
+    console.log('WRITE FINISHED')
+  })
 
 }
 
