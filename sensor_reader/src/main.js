@@ -29,7 +29,7 @@ setTimeout(async () => {
   noble.stopScanning()
 
   // Retrieve known sensors and write them in influx
-  const knownSensors = getKnownSensors(sensors)
+  const knownSensors = sensors["a4c138a8554e"]
   await explore(knownSensors[0])
 
 }, process.argv[2] || 5000); // TODO add env variable for scanning time
