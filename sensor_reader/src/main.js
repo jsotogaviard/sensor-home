@@ -51,7 +51,12 @@ async function explore(peripheral) {
       console.log("Services " + services.length)
       console.log("Characterisitcs " + characteristics.length)
       console.log(characteristics)
-      console.log(services)
+      for(const characteristic in characteristics){
+        characteristic.read((error, data) => {
+          console.log(error)
+          console.log(data)
+        })
+      }
     })
   })
 }
