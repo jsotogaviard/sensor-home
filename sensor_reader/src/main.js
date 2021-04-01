@@ -24,7 +24,7 @@ noble.on('discover', peripheral => {
 
 // Stop scanning after scanning time
 setTimeout(async () => {
-  console.log(JSON.stringify(sensors))
+  console.log(JSON.stringify(sensors.keys()))
   // Stop scanning
   noble.stopScanning()
 
