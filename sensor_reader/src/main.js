@@ -44,7 +44,10 @@ async function explore(peripheral) {
   });
 
   peripheral.connect(function(error) {
+    console.log("connected")
     peripheral.discoverServices([], function(error, services) {
+      console.log("discoverServices")
+      console.log(JSON.stringify(services))
       var serviceIndex = 0;
 
       async.whilst(
