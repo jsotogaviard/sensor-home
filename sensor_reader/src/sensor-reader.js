@@ -38,8 +38,9 @@ function getKnownSensors(sensors) {
   const knownSensors = []
   Object.values(sensors).forEach(sensor => {
     if(isKnownSensor(sensor)){
-      const knownSensor = parseAdvData(sensor)
-      knownSensors.push(knownSensor)
+      knownSensors.push(sensor)
+      //const knownSensor = parseAdvData(sensor)
+      //knownSensors.push(knownSensor)
     }
   });
   return knownSensors;
