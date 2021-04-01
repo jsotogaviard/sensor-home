@@ -33,7 +33,7 @@ setTimeout(async () => {
   await explore(knownSensors[0])
 
 }, process.argv[2] || 5000); // TODO add env variable for scanning time
-
+console.log(process.argv[2])
 
 async function explore(peripheral) {
   console.log('services and characteristics:' + JSON.stringify(peripheral.id));
@@ -47,7 +47,7 @@ async function explore(peripheral) {
     console.log("connected")
     peripheral.discoverServices([], function(error, services) {
       console.log("discoverServices")
-      console.log(JSON.stringify(services))
+      console.log(services)
       var serviceIndex = 0;
 
       async.whilst(
