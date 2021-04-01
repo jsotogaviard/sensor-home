@@ -1,4 +1,5 @@
 import noble from '@abandonware/noble'
+import async from 'async'
 import { getKnownSensors } from './sensor-reader'
 import { write2influx } from './write-to-influx'
 
