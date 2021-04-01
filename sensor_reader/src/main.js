@@ -52,10 +52,11 @@ async function explore(peripheral) {
       console.log("Characterisitcs " + characteristics.length)
       console.log(characteristics)
       for(const characteristic in characteristics){
-        characteristic.read((error, data) => {
+        console.log(Object.keys(characteristic))
+        /*characteristic.read((error, data) => {
           console.log(error)
           console.log(data)
-        })
+        })*/
       }
     })
   })
