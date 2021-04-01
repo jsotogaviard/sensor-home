@@ -22,7 +22,7 @@ noble.on('discover', peripheral => {
 });
 
 // Stop scanning after scanning time
-setTimeout(() => {
+setTimeout(async () => {
 
   // Stop scanning
   noble.stopScanning()
