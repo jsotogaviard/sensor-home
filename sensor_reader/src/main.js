@@ -24,13 +24,14 @@ noble.on('discover', peripheral => {
 
 // Stop scanning after scanning time
 setTimeout(async () => {
-
+  console.log(JSON.stringify(sensors))
   // Stop scanning
   noble.stopScanning()
 
   // Retrieve known sensors and write them in influx
-  const knownSensors = sensors["a4c138a8554e"]
-  await explore(knownSensors[0])
+  const knownSensor = sensors["a4c138a8554e"]
+  if(knownSensor)
+    await explore(knownSensor)
 
 }, process.argv[2] || 5000); // TODO add env variable for scanning time
 console.log(process.argv[2])
