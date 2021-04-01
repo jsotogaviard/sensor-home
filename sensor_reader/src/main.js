@@ -35,7 +35,7 @@ setTimeout(async () => {
 
 
 async function explore(peripheral) {
-  console.log('services and characteristics:' + JSON.stringify(peripheral));
+  console.log('services and characteristics:' + JSON.stringify(peripheral.id));
 
   peripheral.on('disconnect', function() {
     process.exit(0);
