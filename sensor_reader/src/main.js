@@ -29,13 +29,13 @@ setTimeout(() => {
 
   // Retrieve known sensors and write them in influx
   const knownSensors = getKnownSensors(sensors)
-  explore(knownSensors[0])
+  await explore(knownSensors[0])
 
 }, process.env.SCANNING_TIME_MS || 5000); // TODO add env variable for scanning time
 
 
-function explore(peripheral) {
-  console.log('services and characteristics:');
+async function explore(peripheral) {
+  console.log('services and characteristics:' + JSON.stringify(peripheral));
 
   peripheral.on('disconnect', function() {
     process.exit(0);
