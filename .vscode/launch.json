@@ -2,10 +2,18 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "attach to watch tests",
+      "name": "Debug Jest Tests",
       "type": "node",
-      "request": "attach",
-      "port": 5858
-    },
+      "request": "launch",
+      "runtimeArgs": [
+        "--experimental-vm-modules",
+        "--trace-warnings",
+        "--inspect-brk",
+        "src/main.js"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "port": 9229
+    }
   ]
 }
