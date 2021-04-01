@@ -31,7 +31,7 @@ setTimeout(async () => {
   const knownSensors = getKnownSensors(sensors)
   await explore(knownSensors[0])
 
-}, process.env.SCANNING_TIME_MS || 5000); // TODO add env variable for scanning time
+}, process.argv[2] || 5000); // TODO add env variable for scanning time
 
 
 async function explore(peripheral) {
