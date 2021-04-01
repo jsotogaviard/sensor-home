@@ -38,6 +38,7 @@ async function explore(peripheral) {
   console.log('services and characteristics:' + JSON.stringify(peripheral.id));
 
   peripheral.on('disconnect', function() {
+    console.log("disconnect")
     process.exit(0);
   });
 
