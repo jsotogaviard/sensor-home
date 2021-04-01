@@ -30,7 +30,9 @@ We need to install
 ```
 sudo crontab -e
 
-*/15 * * * * pkill node >> /var/log/syslog 2>&1
-
-* * */5 * * service docker restart >> /var/log/syslog 2>&1
+5 * */2 * * docker system prune -a --volumes -f >> /var/log/syslog 2>&1
+* * */2 * * service docker restart >> /var/log/syslog 2>&1
 ```
+# Mac network
+ds : e4:5f:01:15:a5:0d eth / e4:5f:01:15:a5:0e wifi
+js : dc:a6:32:f6:39:0e eth / dc:a6:32:f6:39:10 wifi
