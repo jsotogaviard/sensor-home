@@ -36,3 +36,5 @@ sudo crontab -e
 # Mac network
 ds : e4:5f:01:15:a5:0d eth / e4:5f:01:15:a5:0e wifi
 js : dc:a6:32:f6:39:0e eth / dc:a6:32:f6:39:10 wifi
+
+git add . && git commit -m "more" && git p
