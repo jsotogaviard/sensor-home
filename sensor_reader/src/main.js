@@ -29,7 +29,10 @@ setTimeout(async () => {
   noble.stopScanning()
 
   for(const s in sensors){
-    console.log(sensors[s])
+    const ss = sensors[s]
+    console.log("id " + ss.id)
+    console.log("uuid " + ss.uuid)
+    console.log("name " + ss.advertisement.localName)
   }
   // Retrieve known sensors and write them in influx
   /*const knownSensor = sensors["a4c138a8554e"]
