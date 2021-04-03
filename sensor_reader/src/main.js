@@ -33,8 +33,10 @@ setTimeout(async () => {
     console.log("id " + ss.id)
     console.log("uuid " + ss.uuid)
     console.log("name " + ss.advertisement.localName)
-    console.log("serviceData " + JSON.stringify(ss.advertisement.serviceData[0]))
-    console.log("manufacturerData " + JSON.stringify(ss.advertisement.manufacturerData))
+    if(ss.advertisement.serviceData && ss.advertisement.serviceData.length > 0)
+      console.log("serviceData " + JSON.stringify(ss.advertisement.serviceData[0]))
+    if(ss.advertisement.manufacturerData)
+      console.log("manufacturerData " + JSON.stringify(ss.advertisement.manufacturerData))
   }
   // Retrieve known sensors and write them in influx
   /*const knownSensor = sensors["a4c138a8554e"]
