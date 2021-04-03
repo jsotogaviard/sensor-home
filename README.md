@@ -36,3 +36,21 @@ sudo crontab -e
 # Mac network
 ds : e4:5f:01:15:a5:0d eth / e4:5f:01:15:a5:0e wifi
 js : dc:a6:32:f6:39:0e eth / dc:a6:32:f6:39:10 wifi
+
+# install docker
+git clone https://github.com/jsotogaviard/sensor-home
+sudo apt-get update && sudo apt-get upgrade
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+sudo usermod -aG docker dsoto
+
+git pull && docker-compose up --build -d && docker-compose logs -f
+git pull && docker-compose down -v && docker-compose up --build -d && docker-compose log
+s -f
+
+ssh dsoto@88.142.240.69 -p 8000
+ssh dsoto@192.168.1.21
+
+a4c138785581 -> a4c1384d54a0 -> parents
+a4c138d8df4f -> a4c13891f173 -> gabriel
+

@@ -104,7 +104,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.temperature {room: a4c138785581}"
+              "options": "sensor_data.temperature {room: a4c1384d54a0}"
             },
             "properties": [
               {
@@ -176,7 +176,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.temperature {room: a4c138d8df4f}"
+              "options": "sensor_data.temperature {room: a4c13891f173}"
             },
             "properties": [
               {
@@ -342,7 +342,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.humidity {room: a4c138785581}"
+              "options": "sensor_data.humidity {room: a4c1384d54a0}"
             },
             "properties": [
               {
@@ -414,7 +414,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.humidity {room: a4c138d8df4f}"
+              "options": "sensor_data.humidity {room: a4c13891f173}"
             },
             "properties": [
               {
@@ -580,7 +580,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_percentage {room: a4c138785581}"
+              "options": "sensor_data.battery_percentage {room: a4c1384d54a0}"
             },
             "properties": [
               {
@@ -652,7 +652,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_percentage {room: a4c138d8df4f}"
+              "options": "sensor_data.battery_percentage {room: a4c13891f173}"
             },
             "properties": [
               {
@@ -816,7 +816,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.rssi {room: a4c138785581}"
+              "options": "sensor_data.rssi {room: a4c1384d54a0}"
             },
             "properties": [
               {
@@ -888,7 +888,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.rssi {room: a4c138d8df4f}"
+              "options": "sensor_data.rssi {room: a4c13891f173}"
             },
             "properties": [
               {
@@ -1052,7 +1052,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_millivolts {room: a4c138785581}"
+              "options": "sensor_data.battery_millivolts {room: a4c1384d54a0}"
             },
             "properties": [
               {
@@ -1124,7 +1124,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_millivolts {room: a4c138d8df4f}"
+              "options": "sensor_data.battery_millivolts {room: a4c13891f173}"
             },
             "properties": [
               {
@@ -1290,7 +1290,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.counter {room: a4c138785581}"
+              "options": "sensor_data.counter {room: a4c1384d54a0}"
             },
             "properties": [
               {
@@ -1362,7 +1362,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.counter {room: a4c138d8df4f}"
+              "options": "sensor_data.counter {room: a4c13891f173}"
             },
             "properties": [
               {
