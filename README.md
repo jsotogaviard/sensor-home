@@ -45,8 +45,7 @@ sudo sh get-docker.sh
 sudo usermod -aG docker dsoto
 
 git pull && docker-compose up --build -d && docker-compose logs -f
-git pull && docker-compose down -v && docker-compose up --build -d && docker-compose log
-s -f
+git pull && docker-compose down -v && docker-compose up --build -d && docker-compose logs -f
 
 ssh dsoto@88.142.240.69 -p 8000
 ssh dsoto@192.168.1.21
