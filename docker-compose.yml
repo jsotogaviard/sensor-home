@@ -43,7 +43,7 @@ services:
       - influx_1.8
     env_file:
       - ./chronograf/chronograf.env
-  node-cron:
+  sensor_reader:
     build: ./sensor_reader/
     restart: always  
     network_mode: host
