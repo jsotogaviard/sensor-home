@@ -15,6 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
+  "id": 6,
   "links": [],
   "panels": [
     {
@@ -49,8 +50,8 @@
             "spanNulls": true
           },
           "mappings": [],
-          "max": 50,
-          "min": -10,
+          "max": 40,
+          "min": 5,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -90,108 +91,12 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.temperature {room: a4c1380c272d}"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "Couloir"
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "sensor_data.temperature {room: a4c13843ff74}"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "Filles"
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "sensor_data.temperature {room: a4c13845ae7b}"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "Balcon"
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
               "options": "sensor_data.temperature {room: a4c1384d54a0}"
             },
             "properties": [
               {
                 "id": "displayName",
-                "value": "Parents"
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "sensor_data.temperature {room: a4c1389cd8bd}"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "Sdb parents"
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "sensor_data.temperature {room: a4c138a8554e}"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "Grenier"
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "sensor_data.temperature {room: a4c138ab5905}"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "Sdb filles"
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "sensor_data.temperature {room: a4c138c70dad}"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "Salon"
-              }
-            ]
-          },
-          {
-            "matcher": {
-              "id": "byName",
-              "options": "sensor_data.temperature {room: a4c138cc430d}"
-            },
-            "properties": [
-              {
-                "id": "displayName",
-                "value": "Cuisine"
+                "value": "Dan1"
               }
             ]
           },
@@ -203,7 +108,7 @@
             "properties": [
               {
                 "id": "displayName",
-                "value": "Gabriel"
+                "value": "Dan2"
               }
             ]
           }
@@ -1549,7 +1454,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "soto journel time",
-  "uid": "YJpk77zRa",
+  "title": "soto journel time2",
+  "uid": "YJpk77zRa2",
   "version": 2
 }
