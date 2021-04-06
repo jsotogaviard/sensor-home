@@ -39,12 +39,6 @@ noble.on('discover', peripheral => {
     scale.uuid = serviceData[0].uuid //"181d"
     scale.unit = manufacturer_service_data_hex.substring(4, 6)
     scale.weight = parseInt(manufacturer_service_data_hex.substring(8, 10) + manufacturer_service_data_hex.substring(6, 8), 16)  * 0.01
-    scale.year = parseInt(manufacturer_service_data_hex.substring(2 + 4, 2 + 4 + 4), 16) 
-    scale.month = parseInt(manufacturer_service_data_hex.substring(2 + 4 + 4, 2 + 4 + 4 + 2), 16) 
-    scale.day = parseInt(manufacturer_service_data_hex.substring(2 + 4 + 4 + 2, 2 + 4 + 4 + 2 + 2), 16) 
-    scale.hour = parseInt(manufacturer_service_data_hex.substring(2 + 4 + 4 + 2 + 2 , 2 + 4 + 4 + 2 + 2 + 2), 16) 
-    scale.minute = parseInt(manufacturer_service_data_hex.substring(2 + 4 + 4 + 2 + 2 + 2, 2 + 4 + 4 + 2 + 2 + 2 + 2), 16) 
-    scale.second = parseInt(manufacturer_service_data_hex.substring(2 + 4 + 4 + 2 + 2 + 2 + 2, 2 + 4 + 4 + 2 + 2 + 2 + 2 + 2), 16) 
     console.log(JSON.stringify(scale))
   }
 });
