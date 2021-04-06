@@ -32,7 +32,7 @@ noble.on('discover', peripheral => {
 setTimeout(async () => {
   console.log(JSON.stringify(Object.keys(sensors)))
   // Stop scanning
-  noble.stopScanning()
+  //noble.stopScanning()
    
   // Retrieve known sensors and write them in influx
   /*const knownSensor = sensors["a4c138a8554e"]
