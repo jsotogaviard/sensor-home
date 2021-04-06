@@ -17,19 +17,7 @@ noble.on('stateChange', state => {
 
 // Store all discovered peripherals
 noble.on('discover', peripheral => {
-  if (!sensors[peripheral.id]) {
-    sensors[peripheral.id] = peripheral
-  }
-});
-
-// Stop scanning after scanning time
-setTimeout(async () => {
-  console.log(JSON.stringify(Object.keys(sensors)))
-  // Stop scanning
-  noble.stopScanning()
-
-  for(const s in sensors){
-    const ss = sensors[s]
+  if (peripheral.id == 'c8478cf8ac47') {
     console.log("id " + ss.id)
     console.log("uuid " + ss.uuid)
     console.log("name " + ss.advertisement.localName)
@@ -38,6 +26,24 @@ setTimeout(async () => {
     if(ss.advertisement.manufacturerData)
       console.log("manufacturerData " + JSON.stringify(ss.advertisement.manufacturerData))
   }
+});
+
+// Stop scanning after scanning time
+setTimeout(async () => {
+  console.log(JSON.stringify(Object.keys(sensors)))
+  // Stop scanning
+  noble.stopScanning()
+  const miScale = s['c8478cf8ac47']
+ 
+    const ss = miScale
+    console.log("id " + ss.id)
+    console.log("uuid " + ss.uuid)
+    console.log("name " + ss.advertisement.localName)
+    if(ss.advertisement.serviceData && ss.advertisement.serviceData.length > 0)
+      console.log("serviceData " + JSON.stringify(ss.advertisement.serviceData[0]))
+    if(ss.advertisement.manufacturerData)
+      console.log("manufacturerData " + JSON.stringify(ss.advertisement.manufacturerData))
+ 
   // Retrieve known sensors and write them in influx
   /*const knownSensor = sensors["a4c138a8554e"]
   if (knownSensor)
