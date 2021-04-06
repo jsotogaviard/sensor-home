@@ -34,26 +34,11 @@ noble.on('discover', peripheral => {
     console.log("manufacturer_data_hex")
     console.log(manufacturer_data_hex)
     console.log(peripheral.advertisement.manufacturerData.length)
-     /** byte	function
-0	status byte:
-- Bit 0: lbs unit
-- Bit 1-3: unknown
-- Bit 4: jin unit
-- Bit 5: stabilized
-- Bit 6: unknown
-- Bit 7: weight removed
-1-2	weight (little endian)
-3-4	year (little endian)
-5	month
-6	day
-7	hour
-8	minute
-9	second*/
     const scale = {}
     scale.id = peripheral.id // id == mac
     scale.uuid = serviceData[0].uuid //"181d"
-    scale.status = manufacturer_service_data_hex.substring(0, 2)
-    scale.weight = parseInt(manufacturer_service_data_hex.substring(2, 2 + 4), 16) 
+    scale.unit = manufacturer_service_data_hex.substring(4, 6)
+    scale.weight = parseInt(manufacturer_service_data_hex.substring(8, 10) + manufacturer_service_data_hex.substring(6, 8), 16)  * 0.01
     scale.year = parseInt(manufacturer_service_data_hex.substring(2 + 4, 2 + 4 + 4), 16) 
     scale.month = parseInt(manufacturer_service_data_hex.substring(2 + 4 + 4, 2 + 4 + 4 + 2), 16) 
     scale.day = parseInt(manufacturer_service_data_hex.substring(2 + 4 + 4 + 2, 2 + 4 + 4 + 2 + 2), 16) 
