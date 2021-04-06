@@ -40,15 +40,18 @@ noble.on('discover', peripheral => {
     scale.control_bit = manufacturer_service_data_hex.substring(0, 2)
     scale.control_bit_01 = parseInt(manufacturer_service_data_hex.substring(0, 2),16).toString(2)
     let index = 7
-    scale.IsWeightRemoved = scale.control_bit_01[index--]
-    scale.uknown6 = scale.control_bit_01[index--]
-    scale.IsStabilized = scale.control_bit_01[index--]
-    scale.IsCatty = scale.control_bit_01[index--]
-    scale.uknown3 = scale.control_bit_01[index--]
-    scale.uknown2 = scale.control_bit_01[index--]
-    scale.uknown1 = scale.control_bit_01[index--]
-    scale.IsLBS = scale.control_bit_01[index--]
+    scale.IsWeightRemoved = scale.control_bit_01[index--] == "1"
+    scale.uknown6 = scale.control_bit_01[index--] == "1"
+    scale.IsStabilized = scale.control_bit_01[index--] == "1"
+    scale.IsCatty = scale.control_bit_01[index--] == "1"
+    scale.uknown3 = scale.control_bit_01[index--] == "1"
+    scale.uknown2 = scale.control_bit_01[index--] == "1"
+    scale.uknown1 = scale.control_bit_01[index--] == "1"
+    scale.IsLBS = scale.control_bit_01[index--] == "1"
     scale.weight = parseInt(manufacturer_service_data_hex.substring(4, 6) + manufacturer_service_data_hex.substring(2, 4), 16)  * 0.01 /2
+    if(scale.IsStabilized && scale.IsWeightRemoved) 
+      scale.weightok = scale.weight
+    
     console.log(JSON.stringify(scale))
   }
 });
