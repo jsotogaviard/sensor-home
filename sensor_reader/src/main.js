@@ -37,8 +37,8 @@ noble.on('discover', peripheral => {
     const scale = {}
     scale.id = peripheral.id // id == mac
     scale.uuid = serviceData[0].uuid //"181d"
-    scale.unit = manufacturer_service_data_hex.substring(4, 6)
-    scale.weight = parseInt(manufacturer_service_data_hex.substring(8, 10) + manufacturer_service_data_hex.substring(6, 8), 16)  * 0.01
+    scale.unit = manufacturer_service_data_hex.substring(0, 2)
+    scale.weight = parseInt(manufacturer_service_data_hex.substring(4, 6) + manufacturer_service_data_hex.substring(2, 4), 16)  * 0.01
     console.log(JSON.stringify(scale))
   }
 });
