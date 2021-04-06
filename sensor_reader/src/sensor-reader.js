@@ -5,12 +5,13 @@
  * @returns 
  */
 function parseAdvData(peripheral) {
+
   const serviceData = peripheral.advertisement.serviceData
   const manufacturer_service_data_hex = Buffer.from(serviceData[0].data).toString("hex")
   const thermometer = {}
   thermometer.id = peripheral.id // id == mac
   thermometer.uuid = serviceData[0].uuid //"181a"
-  thermometer.mac = manufacturer_service_data_hex.substring(0, 12)
+  thermometer.mac = manufacturer_service_data_hex.substring(0, 2)
   thermometer.temperature = parseInt(manufacturer_service_data_hex.substring(12, 12 + 4), 16) / 10
   thermometer.humidity = parseInt(manufacturer_service_data_hex.substring(12 + 4, 12 + 4 + 2), 16)
   thermometer.battery_percentage = parseInt(manufacturer_service_data_hex.substring(12 + 4 + 2, 12 + 4 + 2 + 2), 16)
