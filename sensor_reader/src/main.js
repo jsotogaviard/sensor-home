@@ -19,6 +19,7 @@ noble.on('stateChange', state => {
 noble.on('discover', peripheral => {
   if (peripheral.id == 'c8478cf8ac47') {
     console.log("id " + peripheral.id)
+    console.log("rssi " + peripheral.rssi)
     console.log("uuid " + peripheral.uuid)
     console.log("name " + peripheral.advertisement.localName)
     if(peripheral.advertisement.serviceData && peripheral.advertisement.serviceData.length > 0)
