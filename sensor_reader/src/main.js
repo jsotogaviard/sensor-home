@@ -17,7 +17,6 @@ noble.on('stateChange', state => {
 
 // Store all discovered peripherals
 noble.on('discover', peripheral => {
-  console.log(peripheral.id)
   if (peripheral.id == 'c8478cf8ac47') {
     console.log("id " + peripheral.id)
     console.log("uuid " + peripheral.uuid)
@@ -28,6 +27,13 @@ noble.on('discover', peripheral => {
       console.log("manufacturerData " + JSON.stringify(peripheral.advertisement.manufacturerData))
     const serviceData = peripheral.advertisement.serviceData
     const manufacturer_service_data_hex = Buffer.from(serviceData[0].data).toString("hex")
+    console.log("manufacturer_service_data_hex")
+    console.log(manufacturer_service_data_hex)
+    console.log(serviceData[0].data.length)
+    const manufacturer_data_hex = Buffer.from(peripheral.advertisement.manufacturerData).toString("hex")
+    console.log("manufacturer_data_hex")
+    console.log(manufacturer_data_hex)
+    console.log(peripheral.advertisement.manufacturerData.length)
      /** byte	function
 0	status byte:
 - Bit 0: lbs unit
