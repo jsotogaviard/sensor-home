@@ -18,13 +18,13 @@ noble.on('stateChange', state => {
 // Store all discovered peripherals
 noble.on('discover', peripheral => {
   if (peripheral.id == 'c8478cf8ac47') {
-    console.log("id " + ss.id)
-    console.log("uuid " + ss.uuid)
-    console.log("name " + ss.advertisement.localName)
-    if(ss.advertisement.serviceData && ss.advertisement.serviceData.length > 0)
-      console.log("serviceData " + JSON.stringify(ss.advertisement.serviceData[0]))
-    if(ss.advertisement.manufacturerData)
-      console.log("manufacturerData " + JSON.stringify(ss.advertisement.manufacturerData))
+    console.log("id " + peripheral.id)
+    console.log("uuid " + peripheral.uuid)
+    console.log("name " + peripheral.advertisement.localName)
+    if(peripheral.advertisement.serviceData && peripheral.advertisement.serviceData.length > 0)
+      console.log("serviceData " + JSON.stringify(peripheral.advertisement.serviceData[0]))
+    if(peripheral.advertisement.manufacturerData)
+      console.log("manufacturerData " + JSON.stringify(peripheral.advertisement.manufacturerData))
   }
 });
 
