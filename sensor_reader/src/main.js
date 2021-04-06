@@ -39,6 +39,15 @@ noble.on('discover', peripheral => {
     scale.uuid = serviceData[0].uuid //"181d"
     scale.control_bit = manufacturer_service_data_hex.substring(0, 2)
     scale.control_bit_01 = parseInt(manufacturer_service_data_hex.substring(0, 2),16).toString(2)
+    let index = 7
+    scale.IsWeightRemoved = scale.control_bit_01[index--]
+    scale.uknown6 = scale.control_bit_01[index--]
+    scale.IsStabilized = scale.control_bit_01[index--]
+    scale.IsCattyOrKg = scale.control_bit_01[index--]
+    scale.uknown3 = scale.control_bit_01[index--]
+    scale.uknown2 = scale.control_bit_01[index--]
+    scale.uknown1 = scale.control_bit_01[index--]
+    scale.IsLBS = scale.control_bit_01[index--]
     scale.weight = parseInt(manufacturer_service_data_hex.substring(4, 6) + manufacturer_service_data_hex.substring(2, 4), 16)  * 0.01 /2
     console.log(JSON.stringify(scale))
   }
