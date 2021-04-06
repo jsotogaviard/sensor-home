@@ -48,8 +48,11 @@ noble.on('discover', peripheral => {
     scale.uknown2 = scale.control_bit_01[index--] == "1"
     scale.uknown1 = scale.control_bit_01[index--] == "1"
     scale.IsLBS = scale.control_bit_01[index--] == "1"
-    scale.weight = parseInt(manufacturer_service_data_hex.substring(4, 6) + manufacturer_service_data_hex.substring(2, 4), 16)  * 0.01 /2
-    if(scale.IsStabilized && scale.IsWeightRemoved) 
+    if(scale.IsLBS && scale.IsCatty)
+      scale.weight = parseInt(manufacturer_service_data_hex.substring(4, 6) + manufacturer_service_data_hex.substring(2, 4), 16)  * 0.01 
+    else
+      scale.weight = parseInt(manufacturer_service_data_hex.substring(4, 6) + manufacturer_service_data_hex.substring(2, 4), 16)  * 0.01 /2
+    if(scale.IsStabilized && !scale.IsWeightRemoved) 
       scale.weightok = scale.weight
     
     console.log(JSON.stringify(scale))
