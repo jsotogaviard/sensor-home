@@ -17,6 +17,7 @@ noble.on('stateChange', state => {
 
 // Store all discovered peripherals
 noble.on('discover', peripheral => {
+  console.log(peripheral.id)
   if (peripheral.id == 'c8478cf8ac47') {
     console.log("id " + peripheral.id)
     console.log("uuid " + peripheral.uuid)
