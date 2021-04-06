@@ -48,7 +48,13 @@ noble.on('discover', peripheral => {
     scale.uknown2 = scale.control_bit_01[index--] == "1"
     scale.uknown1 = scale.control_bit_01[index--] == "1"
     scale.IsLBS = scale.control_bit_01[index--] == "1"
-    if(scale.IsLBS && scale.IsCatty)
+    scale.year = manufacturer_service_data_hex.substring(8, 10) + manufacturer_service_data_hex.substring(6, 8)
+    scale.month = parseInt(manufacturer_service_data_hex.substring(10, 12), 16)
+    scale.day = parseInt(manufacturer_service_data_hex.substring(12, 14), 16)
+    scale.hours = parseInt(manufacturer_service_data_hex.substring(14, 16), 16)
+    scale.min = parseInt(manufacturer_service_data_hex.substring(16, 18), 16)
+    scale.sec = parseInt(manufacturer_service_data_hex.substring(18, 20), 16)
+    if(scale.IsLBS || scale.IsCatty)
       scale.weight = parseInt(manufacturer_service_data_hex.substring(4, 6) + manufacturer_service_data_hex.substring(2, 4), 16)  * 0.01 
     else
       scale.weight = parseInt(manufacturer_service_data_hex.substring(4, 6) + manufacturer_service_data_hex.substring(2, 4), 16)  * 0.01 /2
