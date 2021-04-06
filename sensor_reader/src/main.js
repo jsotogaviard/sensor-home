@@ -49,7 +49,9 @@ noble.on('discover', peripheral => {
     scale.uknown1 = scale.control_bit_01[index--] == "1"
     scale.IsLBS = scale.control_bit_01[index--] == "1"
     console.log(manufacturer_service_data_hex.substring(8, 10))
+    console.log(parseInt(manufacturer_service_data_hex.substring(8, 10), 16))
     console.log(manufacturer_service_data_hex.substring(6, 8))
+    console.log(parseInt(manufacturer_service_data_hex.substring(6, 8), 16))
     scale.year = parseInt(manufacturer_service_data_hex.substring(8, 10),16) + "" +  parseInt(manufacturer_service_data_hex.substring(6, 8),16)
     scale.month = parseInt(manufacturer_service_data_hex.substring(10, 12), 16)
     scale.day = parseInt(manufacturer_service_data_hex.substring(12, 14), 16)
