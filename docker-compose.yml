@@ -8,8 +8,7 @@ services:
   #     - ./influx_2.0/init.db/:/docker-entrypoint-initdb.d/
   #   ports:
   #     - "8086:8086"
-  #   env_file:
-  #     - ./influx_2.0/influxdb.env
+  #   env_file:     - ./influx_2.0/influxdb.env
   influx_1.8:
     image: influxdb:1.8.4
     restart: always  
@@ -43,8 +42,8 @@ services:
       - influx_1.8
     env_file:
       - ./chronograf/chronograf.env
-  node-cron:
-    build: ./sensor_reader/
+  sensor-data-to-database:
+    build: ./sensor_data_to_database/
     restart: always  
     network_mode: host
     privileged: true

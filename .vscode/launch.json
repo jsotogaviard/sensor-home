@@ -2,14 +2,14 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug Jest Tests",
+      "name": "debug-main",
       "type": "node",
       "request": "launch",
       "runtimeArgs": [
         "--experimental-vm-modules",
         "--trace-warnings",
         "--inspect-brk",
-        "src/main.js"
+        "sensor_data_to_database/src/main.js"
       ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",

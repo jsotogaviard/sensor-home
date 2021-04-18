@@ -1,2 +1,3 @@
-sensor_reader/node_modules
-sensor_reader/coverage
+sensor_data_to_database/node_modules
+sensor_data_to_database/coverage
+.DS_Store
