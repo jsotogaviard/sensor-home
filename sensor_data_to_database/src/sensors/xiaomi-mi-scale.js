@@ -1,4 +1,5 @@
 import { Point } from '@influxdata/influxdb-client'
+import moment from 'moment-timezone';
 
 export default class XiaomiMiScale {
 
@@ -48,13 +49,12 @@ export default class XiaomiMiScale {
         const hour = parseInt(serviceDataHex.substring(14, 16), 16)
         const minute = parseInt(serviceDataHex.substring(16, 18), 16)
         const second = parseInt(serviceDataHex.substring(18, 20), 16)
-        console.log(year + " - " + month+ " - " +  day+ " - " +  hour+ " - " +  minute+ " - " +  second)
-        const weighingDate = new Date(year, month - 1, day, hour, minute, second)
-        console.log(weighingDate.toLocaleString() + " " + weighingDate.getTimezoneOffset())
+        const weighingTime = Date.UTC(year, month - 1, day, hour, minute, second)
+        const weighingDate = moment.tz(weighingTime, "Europe/Paris")
         const point = new Point(this.SCALE_DATABASE)
             .tag('person', this.getPerson(weight))
             .floatField('weight', weight)
-            .timestamp(weighingDate)
+            .timestamp(weighingDate.unix())
         return point
     }
 
