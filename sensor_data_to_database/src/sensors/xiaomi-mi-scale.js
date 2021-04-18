@@ -54,7 +54,7 @@ export default class XiaomiMiScale {
         const point = new Point(this.SCALE_DATABASE)
             .tag('person', this.getPerson(weight))
             .floatField('weight', weight)
-            .timestamp(weighingDate.unix() * 1000000)
+            .timestamp(weighingDate.unix() * 1000000000)
         return point
     }
 
