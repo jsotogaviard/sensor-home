@@ -90,7 +90,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.temperature {room: a4c1380c272d}"
+              "options": "thermometer_data.temperature {room: a4c1380c272d}"
             },
             "properties": [
               {
@@ -102,7 +102,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.temperature {room: a4c13843ff74}"
+              "options": "thermometer_data.temperature {room: a4c13843ff74}"
             },
             "properties": [
               {
@@ -114,7 +114,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.temperature {room: a4c13845ae7b}"
+              "options": "thermometer_data.temperature {room: a4c13845ae7b}"
             },
             "properties": [
               {
@@ -126,7 +126,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.temperature {room: a4c138785581}"
+              "options": "thermometer_data.temperature {room: a4c138785581}"
             },
             "properties": [
               {
@@ -138,7 +138,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.temperature {room: a4c1389cd8bd}"
+              "options": "thermometer_data.temperature {room: a4c1389cd8bd}"
             },
             "properties": [
               {
@@ -150,7 +150,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.temperature {room: a4c138a8554e}"
+              "options": "thermometer_data.temperature {room: a4c138a8554e}"
             },
             "properties": [
               {
@@ -162,7 +162,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.temperature {room: a4c138ab5905}"
+              "options": "thermometer_data.temperature {room: a4c138ab5905}"
             },
             "properties": [
               {
@@ -174,7 +174,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.temperature {room: a4c138c70dad}"
+              "options": "thermometer_data.temperature {room: a4c138c70dad}"
             },
             "properties": [
               {
@@ -186,7 +186,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.temperature {room: a4c138cc430d}"
+              "options": "thermometer_data.temperature {room: a4c138cc430d}"
             },
             "properties": [
               {
@@ -198,7 +198,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.temperature {room: a4c138d8df4f}"
+              "options": "thermometer_data.temperature {room: a4c138d8df4f}"
             },
             "properties": [
               {
@@ -245,7 +245,7 @@
           ],
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"temperature\") AS \"temperature\" FROM \"sotochassaigne\".\"autogen\".\"sensor_data\"GROUP BY time(1m), \"room\" ",
+          "query": "SELECT mean(\"temperature\") AS \"temperature\" FROM \"sotochassaigne\".\"autogen\".\"thermometer_data\"GROUP BY time(1m), \"room\" ",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -343,7 +343,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.humidity {room: a4c1380c272d}"
+              "options": "thermometer_data.humidity {room: a4c1380c272d}"
             },
             "properties": [
               {
@@ -355,7 +355,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.humidity {room: a4c13843ff74}"
+              "options": "thermometer_data.humidity {room: a4c13843ff74}"
             },
             "properties": [
               {
@@ -367,7 +367,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.humidity {room: a4c13845ae7b}"
+              "options": "thermometer_data.humidity {room: a4c13845ae7b}"
             },
             "properties": [
               {
@@ -379,7 +379,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.humidity {room: a4c138785581}"
+              "options": "thermometer_data.humidity {room: a4c138785581}"
             },
             "properties": [
               {
@@ -391,7 +391,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.humidity {room: a4c1389cd8bd}"
+              "options": "thermometer_data.humidity {room: a4c1389cd8bd}"
             },
             "properties": [
               {
@@ -403,7 +403,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.humidity {room: a4c138a8554e}"
+              "options": "thermometer_data.humidity {room: a4c138a8554e}"
             },
             "properties": [
               {
@@ -415,7 +415,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.humidity {room: a4c138ab5905}"
+              "options": "thermometer_data.humidity {room: a4c138ab5905}"
             },
             "properties": [
               {
@@ -427,7 +427,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.humidity {room: a4c138c70dad}"
+              "options": "thermometer_data.humidity {room: a4c138c70dad}"
             },
             "properties": [
               {
@@ -439,7 +439,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.humidity {room: a4c138cc430d}"
+              "options": "thermometer_data.humidity {room: a4c138cc430d}"
             },
             "properties": [
               {
@@ -451,7 +451,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.humidity {room: a4c138d8df4f}"
+              "options": "thermometer_data.humidity {room: a4c138d8df4f}"
             },
             "properties": [
               {
@@ -498,7 +498,7 @@
           ],
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"humidity\") AS \"humidity\" FROM \"sotochassaigne\".\"autogen\".\"sensor_data\"GROUP BY time(1m), \"room\" ",
+          "query": "SELECT mean(\"humidity\") AS \"humidity\" FROM \"sotochassaigne\".\"autogen\".\"thermometer_data\"GROUP BY time(1m), \"room\" ",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -596,7 +596,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_percentage {room: a4c1380c272d}"
+              "options": "thermometer_data.battery_percentage {room: a4c1380c272d}"
             },
             "properties": [
               {
@@ -608,7 +608,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_percentage {room: a4c13843ff74}"
+              "options": "thermometer_data.battery_percentage {room: a4c13843ff74}"
             },
             "properties": [
               {
@@ -620,7 +620,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_percentage {room: a4c13845ae7b}"
+              "options": "thermometer_data.battery_percentage {room: a4c13845ae7b}"
             },
             "properties": [
               {
@@ -632,7 +632,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_percentage {room: a4c138785581}"
+              "options": "thermometer_data.battery_percentage {room: a4c138785581}"
             },
             "properties": [
               {
@@ -644,7 +644,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_percentage {room: a4c1389cd8bd}"
+              "options": "thermometer_data.battery_percentage {room: a4c1389cd8bd}"
             },
             "properties": [
               {
@@ -656,7 +656,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_percentage {room: a4c138a8554e}"
+              "options": "thermometer_data.battery_percentage {room: a4c138a8554e}"
             },
             "properties": [
               {
@@ -668,7 +668,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_percentage {room: a4c138ab5905}"
+              "options": "thermometer_data.battery_percentage {room: a4c138ab5905}"
             },
             "properties": [
               {
@@ -680,7 +680,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_percentage {room: a4c138c70dad}"
+              "options": "thermometer_data.battery_percentage {room: a4c138c70dad}"
             },
             "properties": [
               {
@@ -692,7 +692,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_percentage {room: a4c138cc430d}"
+              "options": "thermometer_data.battery_percentage {room: a4c138cc430d}"
             },
             "properties": [
               {
@@ -704,7 +704,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_percentage {room: a4c138d8df4f}"
+              "options": "thermometer_data.battery_percentage {room: a4c138d8df4f}"
             },
             "properties": [
               {
@@ -751,7 +751,7 @@
           ],
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"battery_percentage\") AS \"battery_percentage\" FROM \"sotochassaigne\".\"autogen\".\"sensor_data\"GROUP BY time(1m), \"room\" ",
+          "query": "SELECT mean(\"battery_percentage\") AS \"battery_percentage\" FROM \"sotochassaigne\".\"autogen\".\"thermometer_data\"GROUP BY time(1m), \"room\" ",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -849,7 +849,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.rssi {room: a4c1380c272d}"
+              "options": "thermometer_data.rssi {room: a4c1380c272d}"
             },
             "properties": [
               {
@@ -861,7 +861,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.rssi {room: a4c13843ff74}"
+              "options": "thermometer_data.rssi {room: a4c13843ff74}"
             },
             "properties": [
               {
@@ -873,7 +873,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.rssi {room: a4c13845ae7b}"
+              "options": "thermometer_data.rssi {room: a4c13845ae7b}"
             },
             "properties": [
               {
@@ -885,7 +885,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.rssi {room: a4c138785581}"
+              "options": "thermometer_data.rssi {room: a4c138785581}"
             },
             "properties": [
               {
@@ -897,7 +897,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.rssi {room: a4c1389cd8bd}"
+              "options": "thermometer_data.rssi {room: a4c1389cd8bd}"
             },
             "properties": [
               {
@@ -909,7 +909,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.rssi {room: a4c138a8554e}"
+              "options": "thermometer_data.rssi {room: a4c138a8554e}"
             },
             "properties": [
               {
@@ -921,7 +921,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.rssi {room: a4c138ab5905}"
+              "options": "thermometer_data.rssi {room: a4c138ab5905}"
             },
             "properties": [
               {
@@ -933,7 +933,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.rssi {room: a4c138c70dad}"
+              "options": "thermometer_data.rssi {room: a4c138c70dad}"
             },
             "properties": [
               {
@@ -945,7 +945,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.rssi {room: a4c138cc430d}"
+              "options": "thermometer_data.rssi {room: a4c138cc430d}"
             },
             "properties": [
               {
@@ -957,7 +957,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.rssi {room: a4c138d8df4f}"
+              "options": "thermometer_data.rssi {room: a4c138d8df4f}"
             },
             "properties": [
               {
@@ -1004,7 +1004,7 @@
           ],
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"rssi\") AS \"rssi\" FROM \"sotochassaigne\".\"autogen\".\"sensor_data\"GROUP BY time(1m), \"room\" ",
+          "query": "SELECT mean(\"rssi\") AS \"rssi\" FROM \"sotochassaigne\".\"autogen\".\"thermometer_data\"GROUP BY time(1m), \"room\" ",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -1100,7 +1100,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_millivolts {room: a4c1380c272d}"
+              "options": "thermometer_data.battery_millivolts {room: a4c1380c272d}"
             },
             "properties": [
               {
@@ -1112,7 +1112,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_millivolts {room: a4c13843ff74}"
+              "options": "thermometer_data.battery_millivolts {room: a4c13843ff74}"
             },
             "properties": [
               {
@@ -1124,7 +1124,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_millivolts {room: a4c13845ae7b}"
+              "options": "thermometer_data.battery_millivolts {room: a4c13845ae7b}"
             },
             "properties": [
               {
@@ -1136,7 +1136,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_millivolts {room: a4c138785581}"
+              "options": "thermometer_data.battery_millivolts {room: a4c138785581}"
             },
             "properties": [
               {
@@ -1148,7 +1148,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_millivolts {room: a4c1389cd8bd}"
+              "options": "thermometer_data.battery_millivolts {room: a4c1389cd8bd}"
             },
             "properties": [
               {
@@ -1160,7 +1160,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_millivolts {room: a4c138a8554e}"
+              "options": "thermometer_data.battery_millivolts {room: a4c138a8554e}"
             },
             "properties": [
               {
@@ -1172,7 +1172,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_millivolts {room: a4c138ab5905}"
+              "options": "thermometer_data.battery_millivolts {room: a4c138ab5905}"
             },
             "properties": [
               {
@@ -1184,7 +1184,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_millivolts {room: a4c138c70dad}"
+              "options": "thermometer_data.battery_millivolts {room: a4c138c70dad}"
             },
             "properties": [
               {
@@ -1196,7 +1196,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_millivolts {room: a4c138cc430d}"
+              "options": "thermometer_data.battery_millivolts {room: a4c138cc430d}"
             },
             "properties": [
               {
@@ -1208,7 +1208,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.battery_millivolts {room: a4c138d8df4f}"
+              "options": "thermometer_data.battery_millivolts {room: a4c138d8df4f}"
             },
             "properties": [
               {
@@ -1255,7 +1255,7 @@
           ],
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"battery_millivolts\") AS \"battery_millivolts\" FROM \"sotochassaigne\".\"autogen\".\"sensor_data\"GROUP BY time(1m), \"room\" ",
+          "query": "SELECT mean(\"battery_millivolts\") AS \"battery_millivolts\" FROM \"sotochassaigne\".\"autogen\".\"thermometer_data\"GROUP BY time(1m), \"room\" ",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -1353,7 +1353,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.counter {room: a4c1380c272d}"
+              "options": "thermometer_data.counter {room: a4c1380c272d}"
             },
             "properties": [
               {
@@ -1365,7 +1365,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.counter {room: a4c13843ff74}"
+              "options": "thermometer_data.counter {room: a4c13843ff74}"
             },
             "properties": [
               {
@@ -1377,7 +1377,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.counter {room: a4c13845ae7b}"
+              "options": "thermometer_data.counter {room: a4c13845ae7b}"
             },
             "properties": [
               {
@@ -1389,7 +1389,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.counter {room: a4c138785581}"
+              "options": "thermometer_data.counter {room: a4c138785581}"
             },
             "properties": [
               {
@@ -1401,7 +1401,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.counter {room: a4c1389cd8bd}"
+              "options": "thermometer_data.counter {room: a4c1389cd8bd}"
             },
             "properties": [
               {
@@ -1413,7 +1413,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.counter {room: a4c138a8554e}"
+              "options": "thermometer_data.counter {room: a4c138a8554e}"
             },
             "properties": [
               {
@@ -1425,7 +1425,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.counter {room: a4c138ab5905}"
+              "options": "thermometer_data.counter {room: a4c138ab5905}"
             },
             "properties": [
               {
@@ -1437,7 +1437,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.counter {room: a4c138c70dad}"
+              "options": "thermometer_data.counter {room: a4c138c70dad}"
             },
             "properties": [
               {
@@ -1449,7 +1449,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.counter {room: a4c138cc430d}"
+              "options": "thermometer_data.counter {room: a4c138cc430d}"
             },
             "properties": [
               {
@@ -1461,7 +1461,7 @@
           {
             "matcher": {
               "id": "byName",
-              "options": "sensor_data.counter {room: a4c138d8df4f}"
+              "options": "thermometer_data.counter {room: a4c138d8df4f}"
             },
             "properties": [
               {
@@ -1508,7 +1508,7 @@
           ],
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"counter\") AS \"counter\" FROM \"sotochassaigne\".\"autogen\".\"sensor_data\"GROUP BY time(1m), \"room\" ",
+          "query": "SELECT mean(\"counter\") AS \"counter\" FROM \"sotochassaigne\".\"autogen\".\"thermometer_data\"GROUP BY time(1m), \"room\" ",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
