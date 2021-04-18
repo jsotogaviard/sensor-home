@@ -25,7 +25,7 @@ describe("A sensor reader module", () => {
                 ]
             }
         }
-        const knownSensors = getKnownSensors({'a4c138ab5905':peripheral})
+        const knownSensors = getKnownSensors({ 'a4c138ab5905': peripheral })
         expect(knownSensors.length).toEqual(0);
     });
     test("A known sensor ", () => {
@@ -40,7 +40,7 @@ describe("A sensor reader module", () => {
                 ]
             }
         }
-        const knownSensors = getKnownSensors({'a4c138ab5905':peripheral})
+        const knownSensors = getKnownSensors({ 'a4c138ab5905': peripheral })
         expect(knownSensors.length).toEqual(1);
     });
     test("Transform into known sensor", () => {
@@ -55,7 +55,7 @@ describe("A sensor reader module", () => {
                 ]
             }
         }
-        const knownSensors = getKnownSensors({'a4c138ab5905':peripheral})
+        const knownSensors = getKnownSensors({ 'a4c138ab5905': peripheral })
         expect(knownSensors.length).toEqual(1);
         const knownSensor = knownSensors[0]
         expect(knownSensor.id).toEqual("a4c138ab5905");
@@ -66,6 +66,17 @@ describe("A sensor reader module", () => {
         expect(knownSensor.battery_percentage).toEqual(85);
         expect(knownSensor.battery_millivolts).toEqual(2975);
         expect(knownSensor.counter).toEqual(99);
+    });
+    describe("A scale module", () => {
+        test("Not a known sensor ", () => {
+            const weightingTime = Date.UTC(2021, 3, 18, 18, 14, 47)
+            const currentOffset = moment.tz('Europe/Paris').utcOffset() * 60 * 1000// current offset in milli seconds
+            const weightingTimeOffset = weightingTime + currentOffset
+            // 1618769687000
+            // Sunday 18 April 2021 18:14:47
+            console.log(weightingTimeOffset)
+            //expect(knownSensors.length).toEqual(0);
+        });
     });
 });
 

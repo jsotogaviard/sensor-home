@@ -49,12 +49,13 @@ export default class XiaomiMiScale {
         const hour = parseInt(serviceDataHex.substring(14, 16), 16)
         const minute = parseInt(serviceDataHex.substring(16, 18), 16)
         const second = parseInt(serviceDataHex.substring(18, 20), 16)
-        const weighingTime = Date.UTC(year, month - 1, day, hour, minute, second)
-        const weighingDate = moment.tz(weighingTime, "Europe/Paris") 
+        const weightingTime = Date.UTC(year, month - 1, day, hour, minute, second)
+        const currentOffset = moment.tz('Europe/Paris').utcOffset() * 60 * 1000// current offset in milli seconds
+        const weightingTimeOffset = weightingTime - currentOffset 
         const point = new Point(this.SCALE_DATABASE)
             .tag('person', this.getPerson(weight))
             .floatField('weight', weight)
-            .timestamp(weighingDate.unix() * 1000000000)
+            .timestamp(weightingTimeOffset * 1000000000)
         return point
     }
 
