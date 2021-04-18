@@ -50,7 +50,7 @@ export default class XiaomiMiScale {
         const second = parseInt(serviceDataHex.substring(18, 20), 16)
         console.log(year + " - " + month+ " - " +  day+ " - " +  hour+ " - " +  minute+ " - " +  second)
         const weighingDate = new Date(year, month - 1, day, hour, minute, second)
-        console.log(weighingDate)
+        console.log(weighingDate.toLocaleString() + " " + weighingDate.getTimezoneOffset())
         const point = new Point(this.SCALE_DATABASE)
             .tag('person', this.getPerson(weight))
             .floatField('weight', weight)
