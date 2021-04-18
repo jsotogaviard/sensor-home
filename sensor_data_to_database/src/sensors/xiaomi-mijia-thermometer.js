@@ -18,8 +18,9 @@ export default class XiaomiMijiaThermometer {
         const rssi = peripheral.rssi
 
         const coeff = 1000 * 60 * 5;
-        const now = new Date();
-        const closestFiveMinutes = new Date(Math.round(now.getTime() / coeff) * coeff)
+        const round = Math.round(new Date().getTime() / coeff) * coeff
+        const closestFiveMinutes = new Date()
+        closestFiveMinutes.setTime(round)
         const point = new Point(this.THERMOMETER_DATABASE)
             .tag('room', mac)
             .floatField('temperature', temperature)
