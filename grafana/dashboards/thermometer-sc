@@ -15,6 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
+  "id": 6,
   "links": [],
   "panels": [
     {
@@ -1455,7 +1456,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "soto chassaigne",
-  "uid": "SJ-q1iwMz",
-  "version": 2
+  "title": "thermometer - sc",
+  "uid": "fhclSLWgz",
+  "version": 1
 }
